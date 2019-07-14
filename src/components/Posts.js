@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'antd/dist/antd.css';
-import { Avatar, Card } from 'antd'
+import { Avatar, Card, Icon, Rate } from 'antd'
 
 
 class Posts extends Component {
@@ -19,13 +19,15 @@ class Posts extends Component {
     return (
       <Card
         type="inner"
-        title={<div>
+        extra={<Rate style={{ color: '#ff4d4f' }} character={<Icon type="heart" />} allowHalf />}
+        actions={[<div><Icon type="smile" /> <span>Up</span></div>, <div><Icon type="meh" /> <span>Meh</span></div>, <div><Icon type="frown" /> <span>Huuu</span></div>]}
+        title={< div >
           <Avatar
             style={{ backgroundColor: '#00a2ae', verticalAlign: 'top' }} size="small">
-            A
+            {this.getTitle().split('')[0]}
           </Avatar>
           <span style={{ marginLeft: "10px" }}>
-            Ade Firman F
+            {this.getTitle()}
           </span>
         </div>
         }
